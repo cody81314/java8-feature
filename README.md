@@ -1,2 +1,2 @@
 # java8-feature
-Learning Java 8 features and write example code.
+Learning Java 8 features and implement example code.

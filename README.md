@@ -77,7 +77,7 @@ List<Dish> dishes = menu.stream()
 
 4. 跳過元素
 
-Stream 還支援 skip(n) 方法，他會回傳一個丟掉前 n 個元素的 Stream。如果 Stream 不足 n 個元素，則回傳一個空的 Stream。如下，跳過超過300卡的頭兩道菜，並且回傳剩下的。
+Stream 還支援 skip(n) 方法，他會回傳一個丟掉前 n 個元素的 Stream。如果 Stream 不足 n 個元素，則回傳一個空的 Stream。如下，跳過超過300卡的頭兩道菜，並且回傳剩下的。
 
 ```java
 List<Dish> dishes = menu.stream()

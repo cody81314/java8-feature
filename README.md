@@ -54,3 +54,35 @@ List<Dish> vegetarianMenu = menu.stream()
 
 2. 篩選各異的元素
 
+Stream 還支援一個叫 distinct 的方法，他會回傳一個元素各異的 Stream。如下，選出列表中所有偶數，並確保沒有重複。
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
+numbers.stream()
+    .filter(i -> i % 2 == 0)
+    .distinct()
+    .forEach(System.out::println);
+```
+
+3. 截短 Stream
+
+Stream 支援 limit(n) 方法，他會回傳一個不超過給定長度的 Stream。如下，建立一個 List，選出熱量超過300卡的頭三道菜。
+
+```java
+List<Dish> dishes = menu.stream()
+                        .filter(d -> d.getCalories() > 300)
+                        .limit(3)
+                        .collect(toList());
+```
+
+4. 跳過元素
+
+Stream 還支援 skip(n) 方法，他會回傳一個丟掉前 n 個元素的 Stream。如果 Stream 不足 n 個元素，則回傳一個空的 Stream。如下，跳過超過300卡的頭兩道菜，並且回傳剩下的。
+
+```java
+List<Dish> dishes = menu.stream()
+                        .filter(d -> d.getCalories() > 300)
+                        .skip(2)
+                        .collect(toList());
+```
+

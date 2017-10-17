@@ -16,7 +16,7 @@ Learning Java 8 features and implement example code.
 
 ## 第五章 使用Stream
 
- Stream 讓你從外部迭代轉向內部迭代。如此一來就不用寫項如下這樣的程式碼來管理資料集合（外部迭代）的迭代了：
+Stream 讓你從外部迭代轉向內部迭代。如此一來就不用寫項如下這樣的程式碼來管理資料集合（外部迭代）的迭代了：
 
 ```java
 List<Dish> vegetarianDishes = new ArrayList<>();
@@ -27,7 +27,7 @@ for(Dish d : menu) {
 }
 ```
 
-可以改為使用支援 filter 和 collect 操作的 Stream API （內部迭代）來管理資料集合的迭代：
+可以改為使用支援 filter 和 collect 操作的 Stream API （內部迭代）來管理資料集合的迭代：
 
 ```java
 import static java.util.stream.Collectors.toList;
@@ -37,14 +37,14 @@ List<Dish> vegetarianDishes =
         .collect(toList());
 ```
 
-這種處理資料的方式讓 Stream API 管理如何處理資料。 Stream API 可以在背後進行多種優化。此外，使用內部迭代， Stream API 可以決定並行運行你的程式碼。而外部迭代只能單一執行緒一個一個迭代並依序執行程式碼。
+這種處理資料的方式讓 Stream API 管理如何處理資料。 Stream API 可以在背後進行多種優化。此外，使用內部迭代， Stream API 可以決定並行運行你的程式碼。而外部迭代只能單一執行緒一個一個迭代並依序執行程式碼。
 
 
 ### 篩選 和 切片
 
-1. 用函數篩選
+1. 用函數篩選
 
-    Streams 介面支援 filter 方法。該方法會接受一個回傳 boolean 值的函數作為參數，並且回傳一個包含所有符合此函數邏輯的元素的 Stream ，如下，從一張菜單篩選出所有的素菜：
+Streams 介面支援 filter 方法。該方法會接受一個回傳 boolean 值的函數作為參數，並且回傳一個包含所有符合此函數邏輯的元素的 Stream ，如下，從一張菜單篩選出所有的素菜：
 
 ```java
 List<Dish> vegetarianMenu = menu.stream()

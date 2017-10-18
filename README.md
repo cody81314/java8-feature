@@ -117,3 +117,6 @@ Stream<String> chars = words.stream()
 ```
 
 使用 flatMap 方法的效果是，將套用 Arrays::stream 的所有元素各自生成的 Stream 合併成為一個 Stream。
+
+
+Test for Git submodule

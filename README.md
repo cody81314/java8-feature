@@ -86,3 +86,34 @@ List<Dish> dishes = menu.stream()
                         .collect(toList());
 ```
 
+### 映射
+
+1. 對 Stream 中每一個元素套用函數
+
+Stream 支援 map 方法，它接受一個函數作為參數。這個函數將會被套用在 Stream 中的每一個元素上，並且將其映射成一個新的元素。如下，把方法引用 Dish::getName 傳給 map 方法，取得 Stream 中元素的名稱。
+
+```java
+Stream<String> dishNames = menu.stream()
+                               .map(Dish::getName);
+```
+
+2. Stream 的扁平化
+
+有時我們可能會遇到一個情況，如下：
+
+```java
+List<String> words = Arrays.asList("Hello", "World");
+Stream<String[]> chars = words.stream()
+                              .map(word -> word.split(""));
+```
+
+但我們真正想要的是用 Stream<String> 來表示一個字符流，可以用 flatMap 方法來達到這個需求。
+
+```java
+List<String> words = Arrays.asList("Hello", "World");
+Stream<String> chars = words.stream()
+                            .map(word -> word.split(""))
+                            .flatMap(Arrays::stream);   //Arrays.stream() 可以將一個 Array 轉成 Stream
+```
+
+使用 flatMap 方法的效果是，將套用 Arrays::stream 的所有元素各自生成的 Stream 合併成為一個 Stream。

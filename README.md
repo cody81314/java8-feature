@@ -107,7 +107,7 @@ Stream<String[]> chars = words.stream()
                               .map(word -> word.split(""));
 ```
 
-但我們真正想要的是用 Stream<String> 來表示一個字符流，可以用 flatMap 方法來達到這個需求。
+但我們真正想要的是用 Stream\<String> 來表示一個字符流，可以用 flatMap 方法來達到這個需求。
 
 ```java
 List<String> words = Arrays.asList("Hello", "World");

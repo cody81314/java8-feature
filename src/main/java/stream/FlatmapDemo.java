@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 /**
  * Created by cody81314 on 2017/10/26.
  */
-public class flatmapDemo {
+public class FlatmapDemo {
 
     public static void main(String[] args) {
         List<String> words = Arrays.asList("Hello", "World");
